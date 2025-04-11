@@ -10,7 +10,7 @@ class PaginationView extends View {
       if (!btn) return;
 
       const goToPage = +btn.dataset.goto;
-      console.log(goToPage);
+      //console.log(goToPage);
       handler(goToPage);
     });
   }
@@ -34,7 +34,7 @@ class PaginationView extends View {
     </button>`;
     }
 
-    console.log(numPages);
+    //console.log(numPages);
     //Last page
     if (curPage === numPages && numPages > 1) {
       return `<button data-goto="${

@@ -36,7 +36,7 @@ export const loadRecipe = async function (id) {
     if (state.bookmarks.some(bokmark => bokmark.id === id))
       state.recipe.bookmarked = true;
     else state.recipe.bookmarked = false;
-    console.log(state.recipe);
+    //console.log(state.recipe);
   } catch (err) {
     throw err;
   }
@@ -85,7 +85,7 @@ const persistBookmarks = function () {
 export const addBookmark = function (recipe) {
   //Add bookmark
   state.bookmarks.push(recipe);
-  console.log(state.bookmarks);
+  //console.log(state.bookmarks);
   // Mark current recipe as bookmarked
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 
@@ -96,7 +96,7 @@ export const removeBookmark = function (id) {
   //Delete bookmark
   const index = state.bookmarks.findIndex(el => el.id === id);
   state.bookmarks.splice(index, 1);
-  console.log(state.bookmarks);
+  //console.log(state.bookmarks);
   // Mark current recipe as NOT bookmarked
   if (id === state.recipe.id) state.recipe.bookmarked = false;
 
@@ -128,7 +128,7 @@ export const uploadRecipe = async function (newRecipe) {
 
         return { quantity: quantity ? +quantity : null, unit, description };
       });
-    console.log(ingredients);
+    //console.log(ingredients);
 
     const recipe = {
       title: newRecipe.title,
@@ -139,7 +139,7 @@ export const uploadRecipe = async function (newRecipe) {
       servings: +newRecipe.servings,
       ingredients,
     };
-    console.log(recipe);
+    //console.log(recipe);
 
     const data = await AJAX(`${API_URL}?key=${KEY}`, recipe);
     state.recipe = createRecipeObject(data);
