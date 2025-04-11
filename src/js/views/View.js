@@ -13,6 +13,7 @@ export default class View {
    * @todo Finish implementation
    */
   render(data, render = true) {
+    console.log(data)
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
