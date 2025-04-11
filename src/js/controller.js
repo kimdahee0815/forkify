@@ -46,18 +46,18 @@ const controlRecipes = async function () {
 const controlSearchResults = async function () {
   try {
     resultsView.renderSpinner();
-    console.log(resultsView);
+    //console.log(resultsView);
 
     // 1) Get search Query
     const query = searchView.getQuery();
-    console.log(query);
-    if (!query) return;
+    //console.log(query);
+    if (!query || query === "") return;
 
     //2) Load Search results
     await model.loadSearchResults(query);
 
     //3) Render results
-    console.log(model.state.search);
+    //console.log(model.state.search);
 
     resultsView.render(model.getSearchResultsPage());
 
@@ -87,7 +87,7 @@ const controlAddBookmark = function () {
   // 1) Add/remove bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   else model.removeBookmark(model.state.recipe.id);
-  console.log(model.state.recipe);
+  //console.log(model.state.recipe);
 
   //2) Update recipe view
   recipeView.update(model.state.recipe);
@@ -106,9 +106,9 @@ const controlAddRecipe = async function (newRecipe) {
     addrecipeView.renderSpinner();
 
     //upload new recipe data
-    console.log(newRecipe);
+    //console.log(newRecipe);
     await model.uploadRecipe(newRecipe);
-    console.log(model.state.recipe);
+    //console.log(model.state.recipe);
 
     //Render recipe
     recipeView.render(model.state.recipe);
@@ -133,7 +133,7 @@ const controlAddRecipe = async function (newRecipe) {
 };
 
 const newFeature = function () {
-  console.log('Welcome to the application!');
+  //console.log('Welcome to the application!');
 };
 
 const init = function () {
