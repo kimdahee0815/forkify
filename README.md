@@ -45,5 +45,6 @@ Built from scratch without any frameworks, it demonstrates solid JavaScript fund
 
 ## 🖼 Preview
 
+![Preview](./forkify-gif.gif)
 
 ---
